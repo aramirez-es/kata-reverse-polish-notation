@@ -7,8 +7,9 @@ use Prophecy\Argument;
 
 class PolishCalculatorSpec extends ObjectBehavior
 {
-    function it_is_initializable()
-    {
-        $this->shouldHaveType('PolishCalculator');
-    }
+	public function it_should_sum_two_numbers()
+	{
+		$this->calculate("11+")->shouldReturn(2);
+		$this->calculate("12+")->shouldReturn(3);
+	}
 }

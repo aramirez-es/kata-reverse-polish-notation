@@ -19,4 +19,10 @@ class PolishCalculatorSpec extends ObjectBehavior
 		$this->calculate("123+")->shouldReturn(6);
 		$this->calculate("417+")->shouldReturn(12);
 	}
+
+	public function it_should_sum_as_numbers_as_given()
+	{
+		$this->calculate("123456789+")->shouldReturn(45);
+		$this->calculate("34291+")->shouldReturn(19);
+	}
 }

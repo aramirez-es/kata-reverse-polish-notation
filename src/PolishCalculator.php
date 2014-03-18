@@ -5,9 +5,12 @@ class PolishCalculator
 
     public function calculate($operation)
     {
-    	if (is_int((int)$operation{2})) {
-    		return (int) $operation{0} + (int) $operation{1} + (int) $operation{2};
+    	$sum = 0;
+    	foreach (str_split($operation) as $index => $operand) {
+	    	if (is_int((int)$operand)) {
+	    		$sum += $operand;
+	    	}
     	}
-    	return (int) $operation{0} + (int) $operation{1};
+    	return $sum;
     }
 }

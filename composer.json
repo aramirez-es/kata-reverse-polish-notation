@@ -1,0 +1,16 @@
+{
+    "name": "aramirez-es/reverse-polish-notation",
+    "require": {
+        "phpspec/phpspec": "2.0.*@dev"
+    },
+    "authors": [
+        {
+            "name": "Alberto Ramirez",
+            "email": "alberto@aramirez.es"
+        }
+    ],
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {"psr-0": {"": "src"}}
+}

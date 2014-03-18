@@ -1,0 +1,4 @@
+REVERSE POLISH NOTATION
+"11+ = 2"
+"512+- = -2"
+"512+4*+3- = 14"

@@ -2,6 +2,7 @@
 
 class PolishCalculator
 {
+    private $operators = ['+', '-', '*'];
 
     public function calculate($operation)
     {
@@ -21,7 +22,7 @@ class PolishCalculator
 
     private function isOperator($symbol)
     {
-        return '+' === $symbol || '-' === $symbol || '*' === $symbol;
+        return in_array($symbol, $this->operators, true);
     }
 
     private function operate($operator, $a, $b)

@@ -5,11 +5,13 @@ class OperatorFactory
 	const OPERATOR_ADD = '+';
 	const OPERATOR_SUBTRACT = '-';
 	const OPERATOR_MULTIPLY = '*';
+    const OPERATOR_DIVIDE = '/';
 
     private static $operators = [
     	self::OPERATOR_ADD, 
     	self::OPERATOR_SUBTRACT, 
-    	self::OPERATOR_MULTIPLY
+    	self::OPERATOR_MULTIPLY,
+        self::OPERATOR_DIVIDE
     ];
 
 	public function isOperator($symbol)
@@ -30,6 +32,9 @@ class OperatorFactory
                 break;
             case self::OPERATOR_MULTIPLY:
                 $operator_class = new Operator\Multiply($a, $b);
+                break;
+            case self::OPERATOR_DIVIDE:
+                $operator_class = new Operator\Divide($a, $b);
                 break;
         }
 

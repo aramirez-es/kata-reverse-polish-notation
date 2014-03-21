@@ -21,7 +21,7 @@ class PolishCalculator
 
     private function isOperator($symbol)
     {
-        return '+' === $symbol || '-' === $symbol;
+        return '+' === $symbol || '-' === $symbol || '*' === $symbol;
     }
 
     private function operate($operator, $a, $b)
@@ -34,6 +34,9 @@ class PolishCalculator
                 break;
             case '-':
                 $result = $a - $b;
+                break;
+            case '*':
+                $result = $a * $b;
                 break;
         }
 

@@ -52,4 +52,9 @@ class PolishCalculatorSpec extends ObjectBehavior
 		$this->calculate("123+-")->shouldReturn(4);
 		$this->calculate("512+4--68+4564+-4-+--", -7);
 	}
+
+	public function it_should_multiply_numbers()
+	{
+		$this->calculate("26*")->shouldReturn(12);
+	}
 }

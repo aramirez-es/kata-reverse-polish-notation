@@ -7,6 +7,11 @@ use Prophecy\Argument;
 
 class PolishCalculatorSpec extends ObjectBehavior
 {
+	public function let()
+    {
+        $this->beConstructedWith(new \OperatorFactory());
+    }
+
 	public function it_should_add_two_numbers()
 	{
 		$this->calculate("11+")->shouldReturn(2);
@@ -56,5 +61,6 @@ class PolishCalculatorSpec extends ObjectBehavior
 	public function it_should_multiply_numbers()
 	{
 		$this->calculate("26*")->shouldReturn(12);
+		$this->calculate("61*")->shouldReturn(6);
 	}
 }

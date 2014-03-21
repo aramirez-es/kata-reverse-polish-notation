@@ -11,7 +11,6 @@ class PolishCalculator
 
     public function calculate($operation)
     {
-    	$result = 0;
         $stack = [];
         $symbols = array_filter(explode(' ', $operation));
 

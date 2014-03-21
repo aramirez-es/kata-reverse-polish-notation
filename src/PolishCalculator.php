@@ -2,8 +2,6 @@
 
 class PolishCalculator
 {
-    private $operators = ['+', '-', '*'];
-
     public function calculate($operation)
     {
     	$result = 0;
@@ -22,7 +20,7 @@ class PolishCalculator
 
     private function isOperator($symbol)
     {
-        return in_array($symbol, $this->operators, true);
+        return OperatorFactory::isOperator($symbol);
     }
 
     private function operate($operator, $a, $b)

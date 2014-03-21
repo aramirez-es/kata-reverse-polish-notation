@@ -45,4 +45,11 @@ class PolishCalculatorSpec extends ObjectBehavior
 		$this->calculate("123--")->shouldReturn(0);
 		$this->calculate("417--")->shouldReturn(2);
 	}
+
+	public function it_should_add_and_subtract_numbers()
+	{
+		$this->calculate("45+9-")->shouldReturn(0);
+		$this->calculate("123+-")->shouldReturn(4);
+		$this->calculate("512+4--68+4564+-4-+--", -7);
+	}
 }

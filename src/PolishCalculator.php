@@ -5,12 +5,22 @@ class PolishCalculator
 
     public function calculate($operation)
     {
-    	$sum = 0;
-    	foreach (str_split($operation) as $index => $operand) {
-	    	if (is_int((int)$operand)) {
-	    		$sum += $operand;
-	    	}
-    	}
-    	return $sum;
+    	$result = 0;
+        $stack = [];
+
+        foreach(str_split($operation) as $symbol) {
+            if ($this->isOperator($symbol)) {
+                $stack[] = array_pop($stack) + array_pop($stack);
+            } else {
+                $stack[] = $symbol;
+            }
+        }
+
+    	return $stack[0];
+    }
+
+    private function isOperator($symbol)
+    {
+        return '+' === $symbol;
     }
 }

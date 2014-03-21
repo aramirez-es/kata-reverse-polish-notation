@@ -25,20 +25,6 @@ class PolishCalculator
 
     private function operate($operator, $a, $b)
     {
-        $result = null;
-        
-        switch ($operator) {
-            case '+':
-                $result = $a + $b;
-                break;
-            case '-':
-                $result = $a - $b;
-                break;
-            case '*':
-                $result = $a * $b;
-                break;
-        }
-
-        return $result;
+        return OperatorFactory::build($operator, $a, $b);
     }
 }

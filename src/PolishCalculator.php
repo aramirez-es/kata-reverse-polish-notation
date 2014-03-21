@@ -10,7 +10,7 @@ class PolishCalculator
 
         foreach(str_split($operation) as $symbol) {
             if ($this->isOperator($symbol)) {
-                $stack[] = array_pop($stack) + array_pop($stack);
+                $stack[] = $this->operate($symbol, array_pop($stack), array_pop($stack));
             } else {
                 $stack[] = $symbol;
             }
@@ -21,6 +21,22 @@ class PolishCalculator
 
     private function isOperator($symbol)
     {
-        return '+' === $symbol;
+        return '+' === $symbol || '-' === $symbol;
+    }
+
+    private function operate($operator, $a, $b)
+    {
+        $result = null;
+        
+        switch ($operator) {
+            case '+':
+                $result = $a + $b;
+                break;
+            case '-':
+                $result = $a - $b;
+                break;
+        }
+
+        return $result;
     }
 }

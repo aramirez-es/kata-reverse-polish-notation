@@ -30,5 +30,19 @@ class PolishCalculatorSpec extends ObjectBehavior
 	{
 		$this->calculate("512+4++", 12);
 		$this->calculate("512+4++68+", 26);
+		$this->calculate("512+4++68+4564++4++", 26);
+	}
+
+	public function it_should_subtract_two_numbers()
+	{
+		$this->calculate("11-")->shouldReturn(0);
+		$this->calculate("12-")->shouldReturn(1);
+		$this->calculate("21-")->shouldReturn(-1);
+	}
+
+	public function it_should_subtract_three_numbers()
+	{
+		$this->calculate("123--")->shouldReturn(0);
+		$this->calculate("417--")->shouldReturn(2);
 	}
 }
